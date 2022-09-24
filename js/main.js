@@ -4,35 +4,26 @@
 
 
 // onclick functions
-$(document).ready(function () {
+$(document).ready(function() {
     $("#prospect").click(function () {
-      $("#content").fadeIn(1500, function () {
-        
-      });
-      loadProspect();
+        $("#content").slideDown(1500, loadProspect());
     });
   
     $("#convert").click(function () {
-      $("#content").fadeIn(1500, function () {
-
-      });
-      loadConvert();
+        $("#content").slideDown(1500, loadConvert());
     });
   
     $("#retain").click(function () {
-      $("#content").fadeIn(1500, function () {
-
-      });
-      loadRetain();
+        $("#content").slideDown(1500, loadRetain());
     });
-  });
+});
 
 // AJAX stuff to load the new content
 function loadProspect() {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', "prospect.html");
 
-    xhr.onload = function (){
+    xhr.onload = function() {
         if (xhr.status === 200) {
             let content = document.getElementById("content1");
             content.innerHTML = xhr.responseText;     
@@ -46,7 +37,7 @@ function loadConvert() {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', "convert.html");
 
-    xhr.onload = function (){
+    xhr.onload = function() {
         if (xhr.status === 200) {
             let content = document.getElementById("content1");
             content.innerHTML = xhr.responseText;     
@@ -60,7 +51,7 @@ function loadRetain() {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', "retain.html");
 
-    xhr.onload = function (){
+    xhr.onload = function() {
         if (xhr.status === 200) {
             let content = document.getElementById("content1");
             content.innerHTML = xhr.responseText;     
