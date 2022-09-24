@@ -4,23 +4,28 @@
 
 
 // onclick functions
-$(document).ready(function() {
-    $("#prospect").click(function() {
-        loadProspect();
-        $("#content").fadeIn();
+$(document).ready(function () {
+    $("#prospect").click(function () {
+      $("#content").fadeIn(1500, function () {
         
+      });
+      loadProspect();
     });
+  
+    $("#convert").click(function () {
+      $("#content").fadeIn(1500, function () {
 
-    $("#convert").click(function() {
-        loadConvert();
-        $("#content").fadeIn();
+      });
+      loadConvert();
     });
+  
+    $("#retain").click(function () {
+      $("#content").fadeIn(1500, function () {
 
-    $("#retain").click(function() {
-        loadRetain();
-        $("#content").fadeIn();
+      });
+      loadRetain();
     });
-});
+  });
 
 // AJAX stuff to load the new content
 function loadProspect() {
