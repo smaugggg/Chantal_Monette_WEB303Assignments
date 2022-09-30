@@ -50,6 +50,6 @@ function getTeamAJAX() {
 
 $(document).ready(function() {
     let callDelay = 3000;
-    setTimeout(getTeamAJAX(), callDelay);
+    setTimeout(callDelay, getTeamAJAX());
 });
 
