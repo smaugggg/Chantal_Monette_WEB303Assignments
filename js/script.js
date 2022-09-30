@@ -50,6 +50,6 @@ function getTeamAJAX() {
 
 
 $(document).ready(function() {
-    $("div#team").slideDown(1500, getTeamAJAX());
+    $("#team").show(1500, getTeamAJAX());
 });
 
