@@ -25,7 +25,8 @@ function getTeamJSON2() {
 }
 
 
-let getTeamAJAX = $.ajax({
+function getTeamAJAX() {
+    $.ajax({
         type: 'GET',
         url: '../team.json',
         datatype: 'JSON',
@@ -45,10 +46,10 @@ let getTeamAJAX = $.ajax({
             });
         },
     });
+}
 
 
-
-$(document).ready(getTeamAJAX, function() {
-    
+$(document).ready(function() {
+    getTeamAJAX();
 });
 
