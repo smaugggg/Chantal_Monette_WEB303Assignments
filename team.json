@@ -1,4 +1,4 @@
- [
+ {"team":[
 		{
 			"name": "Phil Aylesworth",
 			"position": "Vice President of Accounting",
@@ -18,6 +18,11 @@
 			"name": "Mike Girimonte",
 			"position": "Vice President of Sales and Marketing",
 			"bio": "Mike serves as the Vice President of Sales and Marketing for XY Corp. In this role Mike oversees XY Corp's marketing and corporate communications efforts worldwide."
+		},
+		{
+			"name": "Chantal Monette",
+			"position": "Director of Social Media and Dog Cuddling",
+			"bio": "Chantal spends a large portion of her time as Director of Social Media arguing with people on the internet. She is also directly in charge of hugging any dogs that come by and making sure they know they are good boys."
 		}
 		
-	]
+	]}
