@@ -27,7 +27,7 @@ function getTeamAJAX() {
         error: function(xhr, error) {
             $("#team").append("There was an error in retrieving the data.");
         },
-        timeout: 3000,
+        timeout: 5000,
         success: function(data) {
             $("#team h1").remove();
 
