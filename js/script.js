@@ -38,6 +38,7 @@ function getTeamAJAX() {
         },
         timeout: 3000,
         success: function(data) {
+            $("#team").remove("Loading...")
             $.each(data.team, function(index, value) {
                 let teamName = $("<h2></h2>").text(value.name);
                 let teamPosition = $("<h5></h5>").text(value.position);
