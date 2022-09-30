@@ -24,51 +24,33 @@ function getTeamJSON2() {
     }); 
 }
 
-/* 
+
 function getTeamAJAX() {
     $.ajax({
         type: 'GET',
         url: '../team.json',
         datatype: 'JSON',
         beforeSend: function() {
-            $("#team").innerHTML("Loading...");
+            $("#team").append("Loading...");
         },
         error: function(xhr, error) {
-            $("#team").innerHTML("There was an error in retrieving the data.");
+            $("#team").append("There was an error in retrieving the data.");
         },
+        timeout: 3000,
         success: function(data) {
             $.each(data.team, function(index, value) {
                 let teamName = $("<h2></h2>").text(value.name);
                 let teamPosition = $("<h5></h5>").text(value.position);
                 let teamBio = $("<p></p>").text(value.bio);
         
-                $("#team").innerHTML(teamName, teamPosition, teamBio);
+                $("#team").append(teamName, teamPosition, teamBio);
             });
         },
     });
-} */
+} 
 
 
 $(document).ready(function() {
-    $.ajax({
-        type: 'GET',
-        url: '../team.json',
-        datatype: 'JSON',
-        beforeSend: function() {
-            $("#team").innerHTML("Loading...");
-        },
-        error: function(xhr, error) {
-            $("#team").innerHTML("There was an error in retrieving the data.");
-        },
-        success: function(data) {
-            $.each(data.team, function(index, value) {
-                let teamName = $("<h2></h2>").text(value.name);
-                let teamPosition = $("<h5></h5>").text(value.position);
-                let teamBio = $("<p></p>").text(value.bio);
-        
-                $("#team").innerHTML(teamName, teamPosition, teamBio);
-            });
-        },
-    });
+   getTeamAJAX();
 });
 
