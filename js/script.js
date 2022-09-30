@@ -48,8 +48,8 @@ function getTeamAJAX() {
     });
 }
 
-$(document).ready(function() {
-    let callDelay = 3000;
-    setTimeout(callDelay, getTeamAJAX());
+let callDelay = 3000;
+
+$(document).ready(function(callDelay, getTeamAJAX) {
 });
 
