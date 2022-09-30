@@ -48,7 +48,7 @@ let getTeamAJAX = $.ajax({
 
 
 
-$(document).ready(function(getTeamAJAX) {
-
+$(document).ready(getTeamAJAX, function() {
+    
 });
 
