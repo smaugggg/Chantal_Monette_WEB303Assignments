@@ -53,6 +53,6 @@ function getTeamAJAX() {
 
 
 $(document).ready(function() {
-   getTeamAJAX();
+   getTeamJSON();
 });
 
