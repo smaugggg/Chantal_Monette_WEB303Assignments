@@ -16,15 +16,6 @@ function getTeamJSON() {
     });
 }
 
-function getTeamJSON2() { 
-    $.getJSON("../team.json").done(function(data) {
-        $.each(data.team, function(index, value) {
-            $("#team").append("<h2>${value.name}</h2><br /><h5>${value.position}</h5><br /><p>${value.bio}</p><br />"); 
-        });
-    }); 
-}
-
-
 function getTeamAJAX() {
     $.ajax({
         type: 'GET',
@@ -53,6 +44,6 @@ function getTeamAJAX() {
 
 
 $(document).ready(function() {
-   getTeamJSON2();
+   getTeamAJAX();
 });
 
