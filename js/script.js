@@ -31,14 +31,14 @@ function getTeamAJAX() {
         url: '../team.json',
         datatype: 'JSON',
         beforeSend: function() {
-            $("#team").append("Loading...");
+            $("#team").append("<h1>Loading...</h1>");
         },
         error: function(xhr, error) {
             $("#team").append("There was an error in retrieving the data.");
         },
         timeout: 3000,
         success: function(data) {
-            $("#team").remove("Loading...")
+            $("#team h1").remove("Loading...")
             $.each(data.team, function(index, value) {
                 let teamName = $("<h2></h2>").text(value.name);
                 let teamPosition = $("<h5></h5>").text(value.position);
