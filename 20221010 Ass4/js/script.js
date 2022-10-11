@@ -1,40 +1,48 @@
 /*
     Assignment #4
-    {Your name here}
+    Chantal Monette W0800871
 */
 
 $(function () {
-    // your code here
     let locationhere = document.getElementById("locationhere");
+    let header = document.getElementsByTagName("header");
 
     // looking for previous location information
     let prevlat = localStorage.getItem("lat");
     let prevlong = localStorage.getItem("long");
     if (prevlat) {
         locationhere.innerHTML = 
-            "Welcome Back! You were last at: <br /> Latitude: " + prevlat + " Longitude: " + prevlong; 
+            "<h1>Welcome Back!</h1> You were last at: <br /> Latitude: " + prevlat + "<br /> Longitude: " + prevlong; 
     } else {
         locationhere.innerHTML = 
             "Welcome!"
     }
 
     // the geolocation api thing
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(newLocation);
+    if ('geolocation' in navigator) {
+        navigator.geolocation.getCurrentPosition(newLocation, () => {
+            console.log("Location services not available.");
+        });
+    } else {
+        locationhere.innerHTML = "Geolocation isn't available here, sorry!"
     }
 
     // this is the function the geolocator is calling. 
     // theoretically it grabs the info
     // then saves it into local storage if none exists
     // then displays the new info
-    function newLocation(location) {
-        let currentlat = location.coords.latitude;
-        let currentlong = location.coords.longitude;
+    function newLocation(position) {
+        let currentlat = position.coords.latitude;
+        let currentlong = position.coords.longitude;
 
-        localStorage.setItem('let', currentlat);
+        localStorage.setItem('lat', currentlat);
         localStorage.setItem('long', currentlong);
 
-        locationhere.append = "<div id='newlocation'>Latitude: " + currentlat + "<br /> Longitude: " + currentlong + "</div>";
+        let p = document.createElement('p');
+        locationhere.appendChild(p);
+
+        p.innerHTML = 
+        "<div id='newlocation'>Your current location is: <br /> Latitude: " + currentlat + "<br /> Longitude: " + currentlong + "</div>"
     }
 
 
