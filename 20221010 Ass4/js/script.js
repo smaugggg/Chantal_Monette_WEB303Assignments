@@ -42,11 +42,20 @@ $(function () {
         locationhere.appendChild(p);
 
         p.innerHTML = 
-        "<div id='newlocation'>Your current location is: <br /> Latitude: " + currentlat + "<br /> Longitude: " + currentlong + "</div>"
+        "<div id='newlocation'>Your current location is: <br /> Latitude: " + currentlat + "<br /> Longitude: " + currentlong + "</div>";
+
+        // Distance Travelled
+            // so if the previous and current lats and longs are the same, then you tell them they haven't moved
+            // but if they aren't the same then we get to use the FUNction... get it? fun?
+        if(prevlat) {
+            if((prevlat == currentlat) && (prevlong == currentlong)) {
+                p.append("You haven't moved since you last checked!")
+            } else {
+                calcDistanceBetweenPoints();
+            }
+        }
+
     }
-
-
-
 
 
 
