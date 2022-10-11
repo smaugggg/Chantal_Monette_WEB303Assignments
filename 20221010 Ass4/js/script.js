@@ -5,6 +5,38 @@
 
 $(function () {
     // your code here
+    let locationhere = document.getElementById("locationhere");
+
+    // looking for previous location information
+    let prevlat = localStorage.getItem("lat");
+    let prevlong = localStorage.getItem("long");
+    if (prevlat) {
+        locationhere.innerHTML = 
+            "Welcome Back! You were last at: <br /> Latitude: " + prevlat + " Longitude: " + prevlong; 
+    } else {
+        locationhere.innerHTML = 
+            "Welcome!"
+    }
+
+    // the geolocation api thing
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(newLocation);
+    }
+
+    // this is the function the geolocator is calling. 
+    // theoretically it grabs the info
+    // then saves it into local storage if none exists
+    // then displays the new info
+    function newLocation(location) {
+        let currentlat = location.coords.latitude;
+        let currentlong = location.coords.longitude;
+
+        localStorage.setItem('let', currentlat);
+        localStorage.setItem('long', currentlong);
+
+        locationhere.append = "<div id='newlocation'>Latitude: " + currentlat + "<br /> Longitude: " + currentlong + "</div>";
+    }
+
 
 
 
