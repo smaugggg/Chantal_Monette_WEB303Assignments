@@ -44,8 +44,6 @@ $(document).ready(function () {
         $("#content-item-list").append(ContentItem.toString());
     });
 
-    let wrapper = document.getElementsByClassName('content-item-wrapper');
-
     $(".content-item-wrapper").css({"border": "1px solid black", 
                                     "width": "80%",
                                     "padding": "5%",
@@ -66,7 +64,6 @@ $(document).ready(function () {
 
     updateSucceed.addEventListener('click', event => {
         updateContentItem('1', 'BlackPink', 'This is a girl group formed by YG Entertainment. The group consists of four members Jisoo, Jennie, Rose, and Lisa. They debuted in August 2016 with their single album Square One, featuring the hit single Boombayah.', 'EDM');
-        console.log("at least something is happening");
     });
 
 });
