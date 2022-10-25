@@ -18,9 +18,9 @@ $(document).ready(function () {
         
         updateContentItem(id, name, desc, genre) {
             if(id = ContentItem.id && (name != null || desc != null || genre !=null)) {
-                ContentItem.name = name;
-                ContentItem.desc = desc;
-                ContentItem.genre = genre;
+                this.name = name;
+                this.desc = desc;
+                this.genre = genre;
             }
         }
 
@@ -51,6 +51,23 @@ $(document).ready(function () {
                                     "padding": "5%",
                                     "margin": "0 auto",
                                     "margin-top": "2%", });
+
+
+    // Bonus stuff. I can get the buttons to appear but not to work. need to try again later.
+
+    let updateSucceed = document.createElement('button');
+        updateSucceed.classList.add("success");
+        updateSucceed.textContent = 'Successfully Update';
+    let updateFail = document.createElement('button');
+        updateFail.classList.add("failure");
+        updateFail.textContent = 'Try to Update';
+
+    //$("#container").append(updateSucceed, updateFail);
+
+    updateSucceed.addEventListener('click', event => {
+        updateContentItem('1', 'BlackPink', 'This is a girl group formed by YG Entertainment. The group consists of four members Jisoo, Jennie, Rose, and Lisa. They debuted in August 2016 with their single album Square One, featuring the hit single Boombayah.', 'EDM');
+        console.log("at least something is happening");
+    });
 
 });
 
