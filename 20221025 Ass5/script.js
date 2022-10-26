@@ -58,8 +58,11 @@ $(document).ready(function () {
                                     "margin-top": "2%", });
 
 
-    // Bonus stuff. I can get the buttons to appear but not to work. need to try again later.
-    let updateSucceed = document.createElement('button');
+    // For the life of me I cannot get the button to update the information. If you have the time,
+    // I would be grateful for a comment or two as to what could have been done. Thank you
+
+
+/*     let updateSucceed = document.createElement('button');
         updateSucceed.classList.add("success");
         updateSucceed.textContent = 'Successfully Update';
     let updateFail = document.createElement('button');
@@ -76,7 +79,7 @@ $(document).ready(function () {
     $('.failure').on('click', function() {
         kpopgroups[1].updateContentItem(5, 'BlackPink', 'This is a girl group formed by YG Entertainment. The group consists of four members Jisoo, Jennie, Rose, and Lisa. They debuted in August 2016 with their single album Square One, featuring the hit single Boombayah.', 'EDM');
         console.log("Failure.");
-    });
+    }); */
 
 });
 
