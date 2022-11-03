@@ -89,8 +89,65 @@ table {
 body {
     background: #E2DCDE;
     margin: 0 auto;
+    justify-content: center;
+    align-items: center;
 }
 
+/*
+ 2. Header
+*/
+
+.glitch {
+    display: block;
+    margin: 0 auto;
+    font-family: 'Russo One', sans-serif;
+    font-size: 4vh;
+}
+
+
+.glitch {
+    font-size: 100px;
+    text-transform: uppercase;
+    color: #fcf7fa;
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    height: 50%;
+  }
+  
+  .glitch:before, .glitch:after {
+    content: 'Przemysław';
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    color: #fcf7fa;
+    background: $color;
+    text-align: center;
+  }
+  
+  .glitch:before {
+    left: -2px;
+    text-shadow: 2px 0 #00ffea;
+    clip:rect(0,900px,0,0);
+    animation: glitch 3s infinite linear;
+  }
+  
+  .glitch:after {
+    left: 2px;
+    text-shadow: -1px 0 #e23d1f;
+    clip:rect(0,900px,0,0);
+    animation: glitch 2s infinite linear;
+  }
+  
+
+/* Glitch animation keyframe by https://codepen.io/captain_anonym0us/pen/oGBYZO */
+@keyframes glitch{
+    @for $i from 0 through 30{
+      #{percentage($i*(1/30))}{
+        clip:rect(random(100)+px,9999px,random(100)+px,0);
+      }
+    }
+  }
 
 /*
  ?. Tabbed Section
