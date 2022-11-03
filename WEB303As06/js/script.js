@@ -3,11 +3,10 @@ $(document).ready(function() {
 
 $(".glitch").hover(function() {
         $(this).text("Надежда Попова");
-        $(this).css("animation", "glitch 3s infinite linear")
     }, 
     function() {
         $(this).text("Elizabeth Jennings");
-    });
+});
 
 
 $(".classified").on('click', function() {
