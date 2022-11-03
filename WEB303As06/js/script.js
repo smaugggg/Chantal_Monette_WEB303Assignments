@@ -1,5 +1,11 @@
 $(document).ready(function() {
 	
+
+$(".classified").on('click', function() {
+    $(".classified").css("z-index", "0");
+    $(".classified").css("opacity", "0");
+})
+    
 $(".tabbedmenu").each(function() {
     $(".tab-button").on('click', function() {
         console.log("you clicked a button!")
@@ -12,7 +18,6 @@ $(".tabbedmenu").each(function() {
             $(this).addClass("active");
             let aliasline = $(".tabbed ul").find("li:eq(" + alias + ")");
             aliasline.addClass("active");
-            
         }
     });
 });
