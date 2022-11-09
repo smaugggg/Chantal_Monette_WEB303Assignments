@@ -6,8 +6,9 @@
 .modal {
     position: absolute;
     z-index: 1000;
-    background-color: #436d8a;
+    background-color: #817C8D;
+    height: max-content;
     padding: 15px;
+    padding-bottom: 30px;
     border: 1px solid #000;
-    border-radius: 10px;
 }

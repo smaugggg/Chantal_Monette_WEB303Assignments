@@ -8,7 +8,55 @@ $(function () {
         });
         e.preventDefault();
 
-        let modal = new Modal();
+
+        var modal = (function() {
+            var $window = $(window);
+            var $modal = $('<div class="modal"></div>');
+            var $header = $('<h3>Food Gallery</h3>')
+            var $content = $('<div class="modal-content"/>');
+            var $close = $('<button role="button" class="modal-close">Close</button>');
+        
+            $modal.append($header, $content, $close);
+            
+            $close.on('click', function(e) {
+                e.preventDefault();
+                modal.close();
+            });
+        
+            return {
+                center: function() {
+                    var top = Math.max($window.height()-$modal.outerHeight(),0)/2;
+                    var left = Math.max($window.width() -$modal.outerWidth(),0)/2;
+        
+                    $modal.css({                                 
+                        top: top + $window.scrollTop(),         
+                        left: left+ $window.scrollLeft()          
+                    });
+                }, 
+                open: function(settings) {
+                    $content.empty().append(settings.content);
+        
+                    $modal.css({                          
+                        width: settings.width ?? 'auto',    
+                        height: settings.height + $header.height || 'auto'  
+                    }).appendTo('body');
+
+                    $close.css({
+                        margin: 10
+                    });
+        
+                    modal.center();
+                    $(window).on('resize scroll', modal.center);
+                }, 
+                close: function() {
+                    $content.empty();
+                    $modal.detach();
+                    $window.off('resize', modal.center);
+                }
+            };
+        
+        }());  
+
         modal.open({
             content: $content,
             width: 800,
@@ -19,43 +67,4 @@ $(function () {
     });;
 
 });
-
-class Modal {
-    constructor() {
-        this.$window = $(window);
-        this.$modal = $('<div class="modal"></div>');
-        this.$content = $('<div class="modal-content"/>');
-        this.$close = $('<button role="button" class="modal-close">Close</button>');
-
-        this.$modal.append(this.$content, this.$close);
-        this.$close.on('click', (e) => {
-            e.preventDefault();
-            this.close();
-        });
-    }
-
-    center() {
-        let top = Math.max(this.$window.height() - this.$modal.outerHeight(), 0) / 2;
-        let left = Math.max(this.$window.width() - this.$modal.outerWidth(), 0) / 2;
-        this.$modal.css({
-            top: top + this.$window.scrollTop(),
-            left: left + this.$window.scrollLeft()
-        });
-    }
-
-    open(settings) { 
-        this.$content.empty().append(settings.content);
-        this.$modal.css({                          
-            width: settings.width ?? 'auto',    
-            height: settings.height || 'auto'  
-        }).appendTo('body');                 
-        this.center();                      
-        this.$window.on('resize', () => this.center()); 
-    }
-
-    close() {         
-        this.$content.empty();           
-        this.$modal.detach();       
-        this.$window.off('resize');
-    }
-}
+   
