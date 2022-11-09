@@ -25,6 +25,14 @@
 #photo-viewer .thumbnail-anchor img {
   width: 80px;
   height: 45px;
+  margin: 10px;
 }
 #photo-viewer .thumbnail-anchor img.active {
+  border: 3px solid rgb(67, 109, 138);
+  opacity: .3;
+}
+
+.photo-frame img {
+  border: 1px solid black;
+
 }
