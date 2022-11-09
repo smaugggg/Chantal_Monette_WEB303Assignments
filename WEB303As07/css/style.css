@@ -2,3 +2,12 @@
     display: none;
     height: 500px;
 }
+
+.modal {
+    position: absolute;
+    z-index: 1000;
+    background-color: #436d8a;
+    padding: 15px;
+    border: 1px solid #000;
+    border-radius: 10px;
+}

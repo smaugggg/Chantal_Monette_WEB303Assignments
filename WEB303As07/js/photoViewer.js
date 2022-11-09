@@ -2,7 +2,7 @@ $.fn.customPhotoViewer = function() {
     var request;
     var $current;
     var cache = {};
-    var $frame = $('#photo-viewer');
+    var $frame = $('.photo-box');
     var $thumbs = $('.thumbnail-anchor');
 
     function crossfade($img) {
@@ -17,7 +17,7 @@ $.fn.customPhotoViewer = function() {
         $current = $img;
     }
 
-    this.on('click', '.thumb', function(e) {
+    this.on('click', '.thumbnail-anchor', function(e) {
         var $img;
         var src = this.href;
         var request = src;
