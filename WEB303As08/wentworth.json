@@ -3,7 +3,7 @@
                 "firstname": "Bea",
                 "lastname": "Smith",
                 "nickname": "Red",
-                "occupation": "hairdresser",
+                "occupation": "Hairdresser",
                 "alive": "Deceased",
                 "sentence": "Attempted murder"
              },
@@ -37,13 +37,13 @@
                 "nickname": "Winter",
                 "occupation": "Brothel Owner",
                 "alive": "Alive",
-                "sentence": "manslaughter"
+                "sentence": "Manslaughter"
              },
              {
                 "firstname": "Sue",
                 "lastname": "Jenkins",
                 "nickname": "Boomer",
-                "occupation": "inmate",
+                "occupation": "Inmate",
                 "alive": "Alive",
                 "sentence": "Assault/Drug Possession"
              },
