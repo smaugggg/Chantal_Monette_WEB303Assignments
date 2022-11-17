@@ -1,0 +1,67 @@
+{"inmates":[
+             {
+                "firstname": "Bea",
+                "lastname": "Smith",
+                "nickname": "Red",
+                "occupation": "hairdresser",
+                "alive": false,
+                "sentence": "Attempted murder"
+             },
+             {
+                "firstname": "Francesca",
+                "lastname": "Doyle",
+                "nickname": "Franky",
+                "occupation": "Chef",
+                "alive": true,
+                "sentence": "Assault"
+             },
+             {
+                "firstname": "Joan",
+                "lastname": "Ferguson",
+                "nickname": "The Freak",
+                "occupation": "Governor",
+                "alive": true,
+                "sentence": "Murder x2"
+             },
+             {
+                "firstname": "Allie",
+                "lastname": "Novak",
+                "nickname": "Allie",
+                "occupation": "Drug Addict",
+                "alive": true,
+                "sentence": "Kidnapping/Assault"
+             },
+             {
+                "firstname": "Marie",
+                "lastname": "Winter",
+                "nickname": "Winter",
+                "occupation": "Brothel Owner",
+                "alive": true,
+                "sentence": "manslaughter"
+             },
+             {
+                "firstname": "Sue",
+                "lastname": "Jenkins",
+                "nickname": "Boomer",
+                "occupation": "inmate",
+                "alive": true,
+                "sentence": "Assault/Drug Possession"
+             },
+             {
+                "firstname": "Karen",
+                "lastname": "Proctor",
+                "nickname": "Kaz",
+                "occupation": "Activist",
+                "alive": false,
+                "sentence": "Assault/Kidnapping/Murder"
+             },
+             {
+                "firstname": "Ruby",
+                "lastname": "Mitchell",
+                "nickname": "Kangarooby",
+                "occupation": "Boxer",
+                "alive": true,
+                "sentence": "Assault/Resisting Arrest"
+             }
+
+]}
