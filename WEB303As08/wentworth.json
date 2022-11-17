@@ -4,7 +4,7 @@
                 "lastname": "Smith",
                 "nickname": "Red",
                 "occupation": "hairdresser",
-                "alive": false,
+                "alive": "Deceased",
                 "sentence": "Attempted murder"
              },
              {
@@ -12,7 +12,7 @@
                 "lastname": "Doyle",
                 "nickname": "Franky",
                 "occupation": "Chef",
-                "alive": true,
+                "alive": "Alive",
                 "sentence": "Assault"
              },
              {
@@ -20,7 +20,7 @@
                 "lastname": "Ferguson",
                 "nickname": "The Freak",
                 "occupation": "Governor",
-                "alive": true,
+                "alive": "Alive",
                 "sentence": "Murder x2"
              },
              {
@@ -28,7 +28,7 @@
                 "lastname": "Novak",
                 "nickname": "Allie",
                 "occupation": "Drug Addict",
-                "alive": true,
+                "alive": "Alive",
                 "sentence": "Kidnapping/Assault"
              },
              {
@@ -36,7 +36,7 @@
                 "lastname": "Winter",
                 "nickname": "Winter",
                 "occupation": "Brothel Owner",
-                "alive": true,
+                "alive": "Alive",
                 "sentence": "manslaughter"
              },
              {
@@ -44,7 +44,7 @@
                 "lastname": "Jenkins",
                 "nickname": "Boomer",
                 "occupation": "inmate",
-                "alive": true,
+                "alive": "Alive",
                 "sentence": "Assault/Drug Possession"
              },
              {
@@ -52,7 +52,7 @@
                 "lastname": "Proctor",
                 "nickname": "Kaz",
                 "occupation": "Activist",
-                "alive": false,
+                "alive": "Deceased",
                 "sentence": "Assault/Kidnapping/Murder"
              },
              {
@@ -60,7 +60,7 @@
                 "lastname": "Mitchell",
                 "nickname": "Kangarooby",
                 "occupation": "Boxer",
-                "alive": true,
+                "alive": "Alive",
                 "sentence": "Assault/Resisting Arrest"
              }
 

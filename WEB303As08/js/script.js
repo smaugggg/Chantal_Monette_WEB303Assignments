@@ -5,18 +5,12 @@
 function getCharacters() {
     $.getJSON("wentworth.json").done(function(data) {
         $.each(data.inmates, function(index, value) {
-            if(value.alive = true) {
-                let $lifestatus = $('<td></td>').text("Alive");
-            } else {
-                let $lifestatus = $('<td></td>').text("Deceased");
-            }
-
             $('.inmate').append(
                 `<tr>
                 <td class="name">${value.firstname + " " + value.lastname}</td>
                 <td>${value.nickname}</td>
                 <td>${value.occupation}</td>
-                <td>${$lifestatus}</td>
+                <td>${value.alive}</td>
                 <td>${value.sentence}</td>
                 </tr>`
             );
