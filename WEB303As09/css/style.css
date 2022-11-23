@@ -27,7 +27,3 @@ th {
     padding: .35em;
     text-align: center;
 }
-
-tr .active {
-    background-color: aquamarine;
-}
