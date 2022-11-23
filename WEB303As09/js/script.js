@@ -23,6 +23,34 @@ $(document).ready(function() {
         }
     };
 
+    $('.sortable').each(function() {
+        let $table = $(this);
+        let $tbody = $table.find('tbody');
+        let $controls = $table.find('th');
+        let rows = $tbody.find('tr').toArray();
+
+        $controls.on('click', function(){
+            let $header = $(this);
+            let order = $header.data('sort');
+            let column;
+
+            if($header.is('.ascending') || $header.is('.descending')) {
+                $header.toggleClass('ascending descending');
+                $tbody.append(rows.reverse());
+            } else {
+                $header.addClass('ascending');
+                $header.siblings().removeClass('ascending descending');
+                if(compare.hasOwnProperty(order)) {
+                    column = $controls.index(this);
+                    rows.sort(function(a,b) {
+                        a = $(a).find('td').eq(column).text();
+                        b = $(b).find('td').eq(column).text();
+                        return compare[order](a, b);
+                    });
+                }
+            }
+        });
+    });
 
 
     $("#am").click(function(){
