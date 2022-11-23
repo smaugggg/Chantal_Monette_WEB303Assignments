@@ -1,6 +1,4 @@
-.active {
-    background-color: aquamarine;
-}
+
 
 .sortable {
     border: 1px solid #ccc;
@@ -28,4 +26,8 @@ th {
     border: 1px solid #ddd;
     padding: .35em;
     text-align: center;
+}
+
+tr .active {
+    background-color: aquamarine;
 }
