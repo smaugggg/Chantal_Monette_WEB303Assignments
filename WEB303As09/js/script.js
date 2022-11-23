@@ -5,8 +5,27 @@
 $(document).ready(function() {
     getCharacters();
 
+    let compare = {
+        name: function (a, b) {
+            a = a.replace(/^the /i, '');
+            b = b.replace(/^the /i, '');
+
+            if (a < b) {
+                return -1;
+            } else {
+                return a > b ? 1 : 0;
+            }
+        },
+        date: function(a, b){
+            a = new Date(a);
+            b = new Date(b);
+            return a - b;
+        }
+    };
+
+
+
     $("#am").click(function(){
-    
         $("tbody").find("tr").show();
         $("tbody tr").each(function() {
             let value = $(this).children().first().text();
