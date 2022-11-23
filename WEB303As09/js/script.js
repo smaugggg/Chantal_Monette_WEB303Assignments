@@ -51,6 +51,7 @@ function getCharacters() {
                 <td>${value.occupation}</td>
                 <td>${value.alive}</td>
                 <td>${value.sentence}</td>
+                <td>${value.firstappeared}</td>
                 </tr>`
             );
         });  

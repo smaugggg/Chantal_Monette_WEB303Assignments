@@ -5,7 +5,8 @@
                 "nickname": "Red",
                 "occupation": "Hairdresser",
                 "alive": "Deceased",
-                "sentence": "Attempted murder"
+                "sentence": "Attempted murder",
+                "firstappeared": "2013-05-01"
              },
              {
                 "firstname": "Francesca",
@@ -13,7 +14,8 @@
                 "nickname": "Franky",
                 "occupation": "Chef",
                 "alive": "Alive",
-                "sentence": "Assault"
+                "sentence": "Assault",
+                "firstappeared": "2013-05-01"
              },
              {
                 "firstname": "Joan",
@@ -21,7 +23,8 @@
                 "nickname": "The Freak",
                 "occupation": "Governor",
                 "alive": "Alive",
-                "sentence": "Murder x2"
+                "sentence": "Murder x2",
+                "firstappeared": "2014-05-20"
              },
              {
                 "firstname": "Allie",
@@ -29,7 +32,8 @@
                 "nickname": "Allie",
                 "occupation": "Drug Addict",
                 "alive": "Alive",
-                "sentence": "Kidnapping/Assault"
+                "sentence": "Kidnapping/Assault",
+                "firstappeared": "2016-05-10"
              },
              {
                 "firstname": "Marie",
@@ -37,7 +41,8 @@
                 "nickname": "Winter",
                 "occupation": "Brothel Owner",
                 "alive": "Alive",
-                "sentence": "Manslaughter"
+                "sentence": "Manslaughter",
+                "firstappeared": "2018-07-10"
              },
              {
                 "firstname": "Sue",
@@ -45,7 +50,8 @@
                 "nickname": "Boomer",
                 "occupation": "Inmate",
                 "alive": "Alive",
-                "sentence": "Assault/Drug Possession"
+                "sentence": "Assault/Drug Possession",
+                "firstappeared": "2013-05-01"
              },
              {
                 "firstname": "Karen",
@@ -53,7 +59,8 @@
                 "nickname": "Kaz",
                 "occupation": "Activist",
                 "alive": "Deceased",
-                "sentence": "Assault/Kidnapping/Murder"
+                "sentence": "Assault/Kidnapping/Murder",
+                "firstappeared": "2015-04-07"
              },
              {
                 "firstname": "Ruby",
@@ -61,7 +68,8 @@
                 "nickname": "Kangarooby",
                 "occupation": "Boxer",
                 "alive": "Alive",
-                "sentence": "Assault/Resisting Arrest"
+                "sentence": "Assault/Resisting Arrest",
+                "firstappeared": "2018-06-19"
              }
 
 ]}
