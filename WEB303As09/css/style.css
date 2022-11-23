@@ -20,6 +20,7 @@
 
 th {
     text-transform: uppercase;
+    color: #ccc;
 }
 
 .sortable tbody tr {
