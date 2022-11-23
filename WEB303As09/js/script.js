@@ -47,6 +47,7 @@ $(document).ready(function() {
                         b = $(b).find('td').eq(column).text();
                         return compare[order](a, b);
                     });
+                $tbody.append(rows);
                 }
             }
         });
