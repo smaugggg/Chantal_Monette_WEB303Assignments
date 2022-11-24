@@ -48,20 +48,6 @@ $(document).ready(function() {
                     if($(".active2")){
                         $('table').removeClass("active2");
                         $('table').addClass("default");
-                        var type = $(this).data("type");
-                        var records = $("table").find("tbody > tr");
-                        records.sort(function(a, b) {
-                            var value1 = $(a).children("td").eq(column).text();
-                            var value2 = $(b).children("td").eq(column).text();
-                            if(type == "num") {
-                                value1 *= 1;
-                                value2 *= 1;    
-                            }
-                            return (value1 = value2) ? +1 :(value1 = value2?1:0);
-                        });
-                        $.each(records, function(index, row) {
-                            $("tbody").append(row);
-                        });
                     }
                 });
             }); 
@@ -84,41 +70,6 @@ $(document).ready(function() {
     });  
 
 });  
-
-function ascending() {
-    var type = $(this).data("type");
-    var records = $("table").find("tbody > tr");
-    records.sort(function(a, b) {
-        var value1 = $(a).children("td").eq(column).text();
-        var value2 = $(b).children("td").eq(column).text();
-        if(type == "num") {
-            value1 *= 1;
-            value2 *= 1;    
-        }
-        return (value1 < value2) ? -1 :(value1>value2?1:0);
-    });
-    $.each(records, function(index, row) {
-        $("tbody").append(row);
-    });
-}
-
-function descending() {
-    var type = $(this).data("type");
-    var records = $("table").find("tbody > tr");
-    records.sort(function(a, b) {
-        var value1 = $(a).children("td").eq(column).text();
-        var value2 = $(b).children("td").eq(column).text();
-        if(type == "num") {
-            value1 *= 1;
-            value2 *= 1;    
-        }
-        return (value1 > value2) ? -1 :(value1<value2?1:0);
-    });
-    $.each(records, function(index, row) {
-        $("tbody").append(row);
-    });
-}
-
 
 function getCharacters() {
     $.getJSON("wentworth.json").done(function(data) {
