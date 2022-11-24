@@ -16,9 +16,11 @@
     text-align: center;
 }
 
-th {
+th a {
     text-transform: uppercase;
     color: #ccc;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .sortable tbody tr {

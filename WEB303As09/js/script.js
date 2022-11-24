@@ -1,57 +1,123 @@
-// WEB303 Assignment 8
+// WEB303 Assignment 9
 // Chantal Monette W0800871
-// 2022 11 17
+// 2022 11 23
 
 $(document).ready(function() {
     getCharacters();
 
-    var compare = {
-        name: function(a,b) {
-          if(a > b) {
-            return -1;
-          } else {
-            return a > b ? 1 : 0
-          }
-        },
-        date: function(a,b) {
-          a = new Date(a);
-          b = new Date(b);
-      
-          return a - b;
-        }
-      }
-
+    $("th").each(function(column){
+        $(this).click(function(){ // when you click the header item
+            if($(".default")) {
+                $('table').removeClass("default");
+                $('table').addClass("active");
+                var type = $(this).data("type");
+                var records = $("table").find("tbody > tr");
+                records.sort(function(a, b) {
+                    var value1 = $(a).children("td").eq(column).text();
+                    var value2 = $(b).children("td").eq(column).text();
+                    if(type == "num") {
+                        value1 *= 1;
+                        value2 *= 1;    
+                    }
+                    return (value1 < value2) ? -1 :(value1>value2?1:0);
+                });
+                $.each(records, function(index, row) {
+                    $("tbody").append(row);
+                });
+            }  
+            $(this).click(function(){
+                if ($(".active")){
+                    $('table').removeClass("active");
+                    $('table').addClass("active2");
+                    var type = $(this).data("type");
+                    var records = $("table").find("tbody > tr");
+                    records.sort(function(a, b) {
+                        var value1 = $(a).children("td").eq(column).text();
+                        var value2 = $(b).children("td").eq(column).text();
+                        if(type == "num") {
+                            value1 *= 1;
+                            value2 *= 1;    
+                        }
+                        return (value1 > value2) ? -1 :(value1<value2?1:0);
+                    });
+                    $.each(records, function(index, row) {
+                        $("tbody").append(row);
+                    });
+                }
+                $(this).click(function(){
+                    if($(".active2")){
+                        $('table').removeClass("active2");
+                        $('table').addClass("default");
+                        var type = $(this).data("type");
+                        var records = $("table").find("tbody > tr");
+                        records.sort(function(a, b) {
+                            var value1 = $(a).children("td").eq(column).text();
+                            var value2 = $(b).children("td").eq(column).text();
+                            if(type == "num") {
+                                value1 *= 1;
+                                value2 *= 1;    
+                            }
+                            return (value1 = value2) ? +1 :(value1 = value2?1:0);
+                        });
+                        $.each(records, function(index, row) {
+                            $("tbody").append(row);
+                        });
+                    }
+                });
+            }); 
+        });
+    }); 
+    
     $('.sortable').each(function() {
-        let $table = $(this);
-        let $tbody = $table.find('.inmate');
-        let $controls = $table.find('th');
-        let rows = $tbody.find('tr').toArray();
-
-        $controls.on('click', function(){
-            let $header = $(this);
-            let order = $header.data('sort');
-            let column;
-
+        var $table = $(this);
+        var $tbody = $table.find('tbody');
+        var $controls = $table.find('th');
+        $controls.on('click', function() {
+            var $header = $(this);
             if($header.is('.ascending') || $header.is('.descending')) {
                 $header.toggleClass('ascending descending');
-                $tbody.append(rows.reverse());
             } else {
                 $header.addClass('ascending');
                 $header.siblings().removeClass('ascending descending');
-                if(compare.hasOwnProperty(order)) {
-                    column = $controls.index(this);
-                    rows.sort(function(a,b) {
-                        a = $(a).find('td').eq(column).text();
-                        b = $(b).find('td').eq(column).text();
-                        return compare[order](a, b);
-                    });
-                $tbody.append(rows);
-                }
             }
         });
-    });
+    });  
 
 });  
+
+function ascending() {
+    var type = $(this).data("type");
+    var records = $("table").find("tbody > tr");
+    records.sort(function(a, b) {
+        var value1 = $(a).children("td").eq(column).text();
+        var value2 = $(b).children("td").eq(column).text();
+        if(type == "num") {
+            value1 *= 1;
+            value2 *= 1;    
+        }
+        return (value1 < value2) ? -1 :(value1>value2?1:0);
+    });
+    $.each(records, function(index, row) {
+        $("tbody").append(row);
+    });
+}
+
+function descending() {
+    var type = $(this).data("type");
+    var records = $("table").find("tbody > tr");
+    records.sort(function(a, b) {
+        var value1 = $(a).children("td").eq(column).text();
+        var value2 = $(b).children("td").eq(column).text();
+        if(type == "num") {
+            value1 *= 1;
+            value2 *= 1;    
+        }
+        return (value1 > value2) ? -1 :(value1<value2?1:0);
+    });
+    $.each(records, function(index, row) {
+        $("tbody").append(row);
+    });
+}
 
 
 function getCharacters() {
