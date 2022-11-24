@@ -27,3 +27,13 @@ th {
     padding: .35em;
     text-align: center;
 }
+
+.asc-chevron,
+.desc-chevron {
+    display: none;
+}
+
+.ascending .asc-chevron,
+.descending .desc-chevron {
+    display: contents;
+}

@@ -5,27 +5,25 @@
 $(document).ready(function() {
     getCharacters();
 
-    let compare = {
-        name: function (a, b) {
-            a = a.replace(/^the /i, '');
-            b = b.replace(/^the /i, '');
-
-            if (a < b) {
-                return -1;
-            } else {
-                return a > b ? 1 : 0;
-            }
+    var compare = {
+        name: function(a,b) {
+          if(a > b) {
+            return -1;
+          } else {
+            return a > b ? 1 : 0
+          }
         },
-        date: function(a, b){
-            a = new Date(a);
-            b = new Date(b);
-            return a - b;
+        date: function(a,b) {
+          a = new Date(a);
+          b = new Date(b);
+      
+          return a - b;
         }
-    };
+      }
 
     $('.sortable').each(function() {
         let $table = $(this);
-        let $tbody = $table.find('tbody');
+        let $tbody = $table.find('.inmate');
         let $controls = $table.find('th');
         let rows = $tbody.find('tr').toArray();
 
@@ -53,39 +51,6 @@ $(document).ready(function() {
         });
     });
 
-
-    $("#am").click(function(){
-        $("tbody").find("tr").show();
-        $("tbody tr").each(function() {
-            let value = $(this).children().first().text();
-            if(!value[1].match(/[a-mA-M]/)) {
-                $(this).hide();
-            }
-        });
-    });
-    $("#nz").click(function(){
-        
-        $("tbody").find("tr").show();
-        $("tbody tr").each(function() {
-            let value = $(this).children().first().text();
-            if(!value[1].match(/[n-zN-Z]/)) {
-                $(this).hide();
-            }
-        });
-    });
-
-    $("input").keyup(function () {
-        let query = this.value.toLowerCase();    
-        $('tbody tr').each(function () {
-        let $name = $(this);
-        let tname = $name.text();
-                if (tname.toLowerCase().indexOf(query) == 0) {
-                    $name.removeClass('active');
-                } else if(tname.toLowerCase().indexOf(query) != -1) {
-                    $name.addClass('active');   
-                }
-        });
-    });
 });  
 
 
