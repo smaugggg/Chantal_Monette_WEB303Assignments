@@ -1,77 +1,57 @@
 $(document).ready(function() { 
-
-let submit = document.getElementById('submit');
+    let submit = document.getElementById('submit');
     submit.disabled = true;
     submit.className = 'disabled';
 
-matchingPassword();
-passwordLength();
-
-$.ajax({
-    type: "Get",
-    url:  "js/" + 'countries.js',
-    dataType: "script",
-    success: function (data) {
-
-
-        var populate;
-        // let select = document.getElementById('defaultOption');
-        let select = `<option value="defaultOption" selected>Select your country</option>`;
-        
-        populate = select;
-        countries.forEach(element => {
-            populate += `<option value=${(element.code)}>${element.name}</option>`;
-        });
-        options.innerHTML = populate;
-
-    },
-    error: function () {
-        alert("file cannot be opened.....");
-    }
-});
-
-
-});
-
-function passwordLength() {
-    let password = document.getElementById('password');
-    if(password.val().length >= 12) {
-        submit.disabled = false;
-    }
-}
-
-function matchingPassword() {
-    let password = document.getElementById('password');
-    let confirmpassword = document.getElementById('password2');
-
-    $('password, .password2').on('keyup', function() {
-        if(password.val() === confirmpassword.val()) {
-            $('password, .password2').css("background-color:#97FFB6");
-            console.log('it matches');
+$("#password, #password2").on('keyup', function() {
+    if($("#password").val() == $("#password2").val()) {
+        $("#message").html("It's a match!").css('color', '#97FFB6');
+        if($('#password').val().length >= 12) {
             submit.disabled = false;
             submit.className = 'enabled';
-        } else {
-            $('password, .password2').css("background-color:#FF9797");
         }
-    });
-}
+    } else {
+        $("#message").html("Not a match...").css('color', '#FF9797');
+    }
+});
 
-function countries() {
+Countries();
+
+    $("#terms").click(function() {
+        $("#submit").attr("disabled", !this.checked);
+    });
+
+    
+    addEvent($('form'), 'submit', function(e) {             
+        e.preventDefault();                              
+        var elements = this.elements;                    
+        var username = elements.username.value;          
+        var msg      = 'Welcome ' + username;           
+        document.getElementById('main').textContent = msg; 
+      });
+    
+});
+
+function Countries() {
     let countrySelector = document.getElementById('country');
     
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'js/countries.js');
+    let _countries =  getCountries(countries);
+    console.log(_countries);
+    
+    var options = '<option value="none">--Select your Country--</option>';
+    for(let i = 0; i < _countries.length; i++) {
+        let name = _countries[i].name;
+        let code = _countries[i].code;
 
-    xhr.onload = function() {
-        if(xhr.status === 200) {
-            countries.foreach(e => {
-                let countryList;
-                countryList += `<option value=${(e.code)}>${e.name}</option>`    
-            });
-            countrySelector.append()
-        }
+        options += '<option value="' + code + '">' + name + '</option>';    
     }
+    countrySelector.innerHTML = options;
 }
 
-
+function getCountries(countries) {
+    let countryList = $.getScript("js/countries.js").done(function(getcountries) {
+        return getcountries;
+    });
+    return countries;
+}
 
