@@ -1,0 +1,170 @@
+/*
+WEBSITE NAME: Assignment 9 - Forms
+WEBSITE AUTHOR: Chantal Monette
+                W0800871
+
+COLOUR GUIDE:
+*************
+E9E2D4 - Bone
+C5D6CE - Ash Gray
+FFFFFF - White
+F1EDE5 - Alabaster
+CAB895 - Khaki Web
+
+TYPOGRAPHY:
+*************
+   Spartan, Light 300 - https://fonts.google.com/specimen/Spartan?query=spartan
+
+Images used:
+*************
+    Minimalist Background from pixabay - https://pixabay.com/illustrations/background-leaves-minimalist-5574027/
+        Free for Commercial Use
+        No Attribution Required
+*/
+
+
+/*
+0. CSS Reset
+1. General Body
+2. Form Main
+3. Label/Input
+4. Submit Button
+*/
+@charset "utf-8";
+
+/*
+0. CSS Reset
+   http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* 
+ 1. General Body
+ */
+
+ body {
+    background: url(../img/background.png) no-repeat center center fixed;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    font-family: 'Spartan', sans-serif;
+    font-size: 12pt;
+    color: #292215;
+ }
+
+/*
+ 2. Main Form Body
+*/
+
+main {
+    background: #ece9e3;
+    padding: 50px 100px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-top: 15px solid #C5D6CE;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 30pt;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/*
+ 3. Label/Input
+*/
+
+label, input, select {
+    display: block;
+    width: 100%;
+    font-family: 'Spartan', sans-serif;
+    font-size: 12pt;
+    line-height: 24px;
+    color: #292215;
+}
+
+input, select {
+    margin-bottom: 10px;
+    border: none;
+    border: 1px solid #CAB895;
+    background: #E9E2D4;
+}
+
+input:focus, select:focus {
+    border: 1px solid #C5D6CE;
+}
+
+#terms {
+    display: inline-block;
+    align-self: left;
+    width: 20%;
+    margin-bottom: 20px;
+}
+
+#termstext {
+    display: inline;
+}
+
+/*
+ 4. Submit Button
+*/
+
+#submit {
+    display: block;
+    line-height: 24pt;
+    padding: 0 20px;
+    border: none;
+    background: #C5D6CE;
+    transition: .2s all ease-in-out;
+}
+
+#submit:hover {
+    background: #E9E2D4;
+}
+
